@@ -1,0 +1,14 @@
+<osm-script output="xml" timeout="200"> 
+ <id-query {{nominatimArea:Switzerland}} into="area"/> 
+ <union>
+   <query type="way">
+           <has-kv k="amenity" v="fuel"/>
+           <area-query from="area"/>
+      </query>
+ </union>
+ <union>
+      <item />
+      <recurse type="down"/>
+ </union>
+ <print mode="body" />
+</osm-script>

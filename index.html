@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Gas-Station Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <h3>Gas-Station Map of Switzerland</h3>
+        <div class="filter">
+            <span id="filter-text">filter by brand:</span>
+            <select id="filter">
+                <option value="all">all</option>
+                <option value="agip">Agip</option>
+                <option value="agrola">Agrola</option>
+                <option value="avia">Avia</option>
+                <option value="bp">BP</option>
+                <option value="coop">Coop</option>
+                <option value="eni">Eni</option>
+                <option value="esso">Esso</option>
+                <option value="migrol">Migrol</option>
+                <option value="shell">Shell</option>
+                <option value="socar">Socar</option>
+                <option value="tamoil">Tamoil</option>
+            </select>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
