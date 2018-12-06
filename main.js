@@ -37,7 +37,9 @@ fetch("swiss_geoJson.json")
         };
       }
     }).addTo(map);
-  });
+  })
+  .catch((error) => console.log(error)
+  );
 
 fetch("data_fuel.json")
   .then(response => (data = response.json()))
