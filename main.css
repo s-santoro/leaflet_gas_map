@@ -1,31 +1,35 @@
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 #wrapper {
-    height: 100%;
-    /*background-color: rgb(221, 221, 221);*/
-    /* background: lightgrey; */
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  /*background-color: rgb(221, 221, 221);*/
+  /* background: lightgrey; */
+  justify-content: center;
+  align-items: center;
 }
 
 h3 {
-    padding-top: 20px;
-    text-align: center;
+  padding-top: 20px;
+  text-align: center;
 }
 
 #filter-text {
-    margin-right: 15px;
+  margin-right: 15px;
+}
+#filter-amount-text {
+  margin-left: 50px;
+  margin-right: 10px;
 }
 
 .filter {
-    margin: 10px auto;
-    width: 80%;
+  margin: 10px auto;
+  width: 80%;
 }
 
 #map {
-    margin: 0 auto;
-    height: 85%;
-    width: 80%;
+  margin: 0 auto;
+  height: 85%;
+  width: 80%;
 }

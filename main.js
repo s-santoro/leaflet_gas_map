@@ -38,8 +38,7 @@ fetch("swiss_geoJson.json")
       }
     }).addTo(map);
   })
-  .catch((error) => console.log(error)
-  );
+  .catch(error => console.log(error));
 
 fetch("data_fuel.json")
   .then(response => (data = response.json()))
@@ -49,26 +48,19 @@ fetch("data_fuel.json")
       let node = data.elements[x];
       let lat = node.lat;
       let lon = node.lon;
+      let popupMsg = "";
       let name =
-        node.tags.name != undefined ? node.tags.name.toLowerCase() : "no info";
+        node.tags.name != undefined ? node.tags.name.toLowerCase() : null;
       let brand =
-        node.tags.brand != undefined
-          ? node.tags.brand.toLowerCase()
-          : "no info";
+        node.tags.brand != undefined ? node.tags.brand.toLowerCase() : null;
       let operator =
         node.tags.operator != undefined
           ? node.tags.operator.toLowerCase()
-          : "no info";
-      let popupMsg =
-        "<p>name: " +
-        name +
-        "</p>" +
-        "<p>brand: " +
-        brand +
-        "</p>" +
-        "<p>opeartor: " +
-        operator +
-        "</p>";
+          : null;
+
+      Object.keys(node.tags).forEach(function(key) {
+        popupMsg = popupMsg + getPopUpEntry(key, node.tags[key]);
+      });
 
       for (i = 0; i < brands.length; i++) {
         if (
@@ -92,6 +84,7 @@ fetch("data_fuel.json")
       }
     }
     map.addLayer(markerCluster);
+    document.querySelector("#filter-amount").innerText = fuelstations.length;
   })
   .catch(error => console.log(error));
 
@@ -117,4 +110,13 @@ function filterByBrand() {
   });
   markerCluster.clearLayers();
   markerCluster.addLayers(filteredMarkers);
+  document.querySelector("#filter-amount").innerText =
+    filteredFuelstations.length;
+}
+
+function getPopUpEntry(key, value) {
+  if (key === "amenity") {
+    return "";
+  }
+  return "<p>" + key.toLowerCase() + ": " + value.toLowerCase() + "</p>";
 }
